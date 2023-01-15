@@ -1,15 +1,16 @@
 const path = require('path');
 const fs = require('fs').promises;
 
-async function getMarkdownFiles() {
+async function getMarkdownSlugs() {
   const files = await getFiles(__dirname, 3);
-  return files.reduce((mdFiles, file) => {
-    if (file.endsWith('.md') && !file.endsWith("README.md")) {
-      const relativePath = file.slice(__dirname.length + 1);
-      mdFiles.push(relativePath);
-    }
-    return mdFiles;
-  }, []);
+  return files
+    .filter(file => file.endsWith('.md') && !file.endsWith("README.md"))
+    .map(file => path.basename(file, '.md'));
+}
+
+async function getAbsolutePath(name) {
+  const files = await getFiles(__dirname, 3);
+  return files.find(file => path.basename(file, '.md') === name).filepath
 }
 
 async function getFiles(folder, depth) {
@@ -25,4 +26,7 @@ async function getFiles(folder, depth) {
   return files;
 }
 
-module.exports = getMarkdownFiles;
+module.exports = {
+  getMarkdownSlugs,
+  getAbsolutePath
+};
