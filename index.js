@@ -10,7 +10,7 @@ async function getMarkdownSlugs() {
 
 async function getAbsolutePath(name) {
   const files = await getFiles(__dirname, 3);
-  return files.find(file => path.basename(file, '.md') === name).filepath
+  return files.find(file => path.basename(file, '.md') === name)
 }
 
 async function getFiles(folder, depth) {
