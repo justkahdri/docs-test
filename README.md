@@ -1,11 +1,11 @@
 # Docs
-This repository contains the Markdown files for the meili-docs project.
+This repository contains the Markdown files for the landing-test project.
 
 ## Branches
 The repository contains two branches:
 
-- *preview*: This branch is for development and testing new changes. Any changes should be done on this branch and then reviewed and tested before merging them to the main branch.
-- *main*: This branch is for production and should only contain stable and tested changes.
+- **preview**: This branch is for development and testing new changes. Any changes should be done on this branch and then reviewed and tested before merging them to the main branch.
+- **main**: This branch is for production and should only contain stable and tested changes.
 
 ## How to contribute
 1. Clone the repository
@@ -29,6 +29,4 @@ git push
 Changes on main branch will be automatically deployed to production.
 
 ## Note
-Make sure that you test your changes before making a pull request, and keep in mind that the preview branch may contain unstable code that is not suitable for production.
-
 Please follow the guidelines, and feel free to ask any questions if you have any doubts.
